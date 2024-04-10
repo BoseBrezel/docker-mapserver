@@ -33,41 +33,17 @@ You should also remove the "Earth" section from the "csp-simple-bodies" plugin c
 
 ```json
 ...
-"csp-lod-bodies": {
-  "maxGPUTilesColor": 1024,
-  "maxGPUTilesDEM": 1024,
-  "tileResolutionDEM": 128,
-  "tileResolutionIMG": 256,
-  "mapCache": "map-cache/",
-  "bodies": {
-    "Earth": {
-      "activeImgDataset": "Blue Marble",
-      "activeDemDataset": "ETOPO1",
-      "imgDatasets": {
-        "Blue Marble": {
-          "copyright": "NASA",
-          "url": "http://localhost:8080/cgi-bin/mapserv?map=/mapserver-datasets/meta.map&service=wms",
-          "layers": "earth.bluemarble.rgb",
-          "maxLevel": 6
-        },
-        "Natural Earth": {
-          "copyright": "NASA",
-          "url": "http://localhost:8080/cgi-bin/mapserv?map=/mapserver-datasets/meta.map&service=wms",
-          "layers": "earth.naturalearth.rgb",
-          "maxLevel": 6
-        }
-      },
-      "demDatasets": {
-        "ETOPO1": {
-          "copyright": "NOAA",
-          "url": "http://localhost:8080/cgi-bin/mapserv?map=/mapserver-datasets/meta.map&service=wms",
-          "layers": "earth.etopo1.dem",
-          "maxLevel": 6
-        }
-      }
-    }
-  }
-},
+ new_space_item = {
+                         "elevation": -4000.0,
+                         "height": 1200,
+                         "html": f"<iframe width='100%' height='100%' src='file://../share/resources/gui/{item['name']}.html'  
+                            frameborder=' 0'></iframe>",
+                         "latitude": float(item["latitude"]),
+                         "longitude": float(item["longitude"]),
+                         "object": "Mars",
+                         "scale": 1000.0,
+                         "width": 1600
+                     }
 ...
 ```
 
